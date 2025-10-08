@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: java-springboot-oaqupnxf-gitops
+  description: This is GitOps manifest for java-springboot-oaqupnxf   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=java-springboot-oaqupnxf
+    backstage.io/kubernetes-id: java-springboot-oaqupnxf 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: java-springboot-oaqupnxf-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:java-springboot-oaqupnxf
